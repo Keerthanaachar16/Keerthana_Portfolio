@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certifications-Keerthana</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:black;
+    color:white;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:rgba(0,0,0,0.9);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:bold;
+    color:#ff4081;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+    text-shadow:0 8px 20px rgba(255,25,178,0.89);
+}
+
+nav ul li a:hover{
+    color:#ff4081;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:1.8rem;
+    color:white;
+    cursor:pointer;
+}
+
+/* CERTIFICATIONS */
+
+.certifications{
+    padding:60px 10%;
+}
+
+.heading{
+    text-align:center;
+    font-size:3rem;
+    color:white;
+    margin-bottom:50px;
+}
+
+.heading span{
+    color:#ff4081;
+}
+
+.certificate-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.certificate-card{
+    background:#111;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(255,25,178,.4);
+    transition:.4s;
+}
+
+.certificate-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 8px 25px rgba(255,25,178,.9);
+}
+
+.certificate-card img{
+    width:100%;
+    height:300px;
+    object-fit:contain;
+    background:#fff;
+    padding:10px;
+}
+
+.certificate-content{
+    padding:20px;
+}
+
+.certificate-content h3{
+    color:white;
+    margin-bottom:10px;
+    border-bottom:1px solid #ff4081;
+    padding-bottom:8px;
+    text-align: center;
+}
+
+.certificate-content p{
+    color:#ccc;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+    border-top:1px solid #333;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:1.4rem;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:black;
+        flex-direction:column;
+        align-items:center;
+        display:none;
+        padding:20px 0;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .certifications{
+        padding:40px 5%;
+    }
+
+    .heading{
+        font-size:2rem;
+    }
+
+    .certificate-container{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body oncontextmenu="return false;">
+
+<nav>
+
+<div class="logo">Keerthana</div>
+
+<div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+</div>
+
+<ul id="nav-links">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="aboutme.html">ABOUT</a></li>
+    <li><a href="education.html">EDUCATION</a></li>
+    <li><a href="projects.html">PROJECTS</a></li>
+    <li><a href="certifications.html">CERTIFICATIONS</a></li>
+</ul>
+
+</nav>
+
+<section class="certifications">
+
+<h2 class="heading">My <span>Certifications</span></h2>
+
+<div class="certificate-container">
+
+<div class="certificate-card">
+<img src="images/certificate1.jpg" alt="Full Stack Web Development" draggable="false">
+<div class="certificate-content">
+<h3>Full Stack Web Development</h3>
+<p>Udemy • 2025</p>
+</div>
+</div>
+
+<div class="certificate-card">
+<img src="images/certificate2.jpg" alt="Cloud Computing" draggable="false">
+<div class="certificate-content">
+<h3>Cloud Computing & Distributed Systems</h3>
+<p>NPTEL • 2025</p>
+</div>
+</div>
+
+<div class="certificate-card">
+<img src="images/certificate3.jpg" alt="Machine Learning" draggable="false">
+<div class="certificate-content">
+<h3>Introduction to Machine Learning</h3>
+<p>NPTEL • 2024</p>
+</div>
+</div>
+
+<div class="certificate-card">
+<img src="images/certificate4.jpg" alt="PHP Programming" draggable="false">
+<div class="certificate-content">
+<h3>PHP Programming</h3>
+<p>Infosys Springboard • Feb 2024</p>
+</div>
+</div>
+
+<div class="certificate-card">
+<img src="images/certificate5.jpg" alt="Python" draggable="false">
+<div class="certificate-content">
+<h3>Basics of Python</h3>
+<p>Infosys Springboard • Nov 2023</p>
+</div>
+</div>
+
+<div class="certificate-card">
+<img src="images/certificate6.jpg" alt="AWS" draggable="false">
+<div class="certificate-content">
+<h3>AWS Cloud Practitioner Essentials</h3>
+<p>AWS Authorized Training • Apr 2023</p>
+</div>
+</div>
+
+<div class="certificate-card">
+<img src="images/certificate7.jpg" alt="Google Data Analytics" draggable="false">
+<div class="certificate-content">
+<h3>Google Data Analytics</h3>
+<p>Google • Dec 2022</p>
+</div>
+</div>
+
+<div class="certificate-card">
+<img src="images/certificate8.jpg" alt="5G" draggable="false">
+<div class="certificate-content">
+<h3>5G Network Jamming Attacks</h3>
+<p>Paper Presentation • June 2024</p>
+</div>
+</div>
+
+<div class="certificate-card">
+<img src="images/certificate9.jpg" alt="Resume" draggable="false">
+<div class="certificate-content">
+<h3>Resume Generator Application</h3>
+<p>Paper Presentation • May 2025</p>
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+<div class="footer">
+
+</div>
+
+<script>
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+document.addEventListener('dragstart', e => e.preventDefault());
+
+</script>
+
+</body>
+</html>

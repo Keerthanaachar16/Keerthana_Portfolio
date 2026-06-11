@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me-Keerthana</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:black;
+    color:white;
+    text-align:center;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:rgba(0,0,0,0.85);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:bold;
+    color:#ff4081;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+    margin:0;
+    padding:0;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+    text-shadow:0 8px 20px rgba(255,25,178,0.9);
+}
+
+nav ul li a:hover{
+    color:#ff4081;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+/* ================= ABOUT ================= */
+.about{
+    min-height:100vh;
+    padding:80px 20px;
+    background:linear-gradient(135deg,#000,#0f0f0f);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.about-title{
+    font-size:2.8rem;
+    margin-bottom:40px;
+}
+
+.about-title span{
+    color:#ff4081;
+    text-shadow:0 8px 20px rgba(255,25,178,0.8);
+}
+
+.about-box{
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(255,25,178,0.4);
+    animation:slideUp 1.5s ease;
+    text-align:justify; /* Justified content */
+}
+
+.about-box p{
+    font-size:1.1rem;
+    line-height:1.8;
+    color:#ddd;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideUp{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:rgba(0,0,0,0.95);
+        flex-direction:column;
+        display:none;
+        padding:20px 0;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .about-box{
+        padding:25px;
+        text-align:justify; /* Keep justified on mobile */
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <div class="logo">Keerthana</div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul id="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="aboutme.html">ABOUT</a></li>
+        <li><a href="education.html">EDUCATION</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="certifications.html">CERTIFICATIONS</a></li>
+    </ul>
+</nav>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+    <h2 class="about-title">About <span>Me</span></h2>
+
+    <div class="about-box">
+        <p id="typing"></p>
+    </div>
+</section>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+/* Navbar Toggle */
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.onclick = () => {
+    navLinks.classList.toggle("active");
+};
+
+document.querySelectorAll("#nav-links a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        navLinks.classList.remove("active");
+    });
+});
+
+/* Typing Animation */
+const typingText = document.getElementById("typing");
+
+const sentences = [
+    "Hi, I’m Keerthana, an MCA graduate who enjoys building creative and practical web applications.",
+    "I completed my MCA from Poornaprajna Institute of Management, Udupi, I earned my BCA from Bhandarkar’s Arts and Science College, Kundapura.",
+    "I work with technologies such as HTML, CSS, JavaScript, PHP, Python, MySQL, and Laravel, and I enjoy handling both frontend and backend development.",
+    "I have built several projects, including management systems, a resume generator, portfolio websites, and Android-based applications.",
+    "To continuously improve my skills, I have completed certifications in Full Stack Web Development, Cloud Computing, Machine Learning, PHP programming, AWS Cloud Practitioner, and Google Data Analytics.",
+    "I’m always curious to learn new technologies and love turning ideas into real-world digital solutions."
+];
+
+let sentenceIndex = 0;
+let charIndex = 0;
+
+function typeSentence(){
+    if(sentenceIndex < sentences.length){
+        let currentSentence = sentences[sentenceIndex];
+        typingText.textContent += currentSentence.charAt(charIndex);
+        charIndex++;
+        if(charIndex < currentSentence.length){
+            setTimeout(typeSentence, 30); // typing speed
+        } else {
+            typingText.textContent += " "; // space between sentences
+            charIndex = 0;
+            sentenceIndex++;
+            setTimeout(typeSentence, 500); // delay before next sentence
+        }
+    }
+}
+
+typeSentence();
+</script>
+
+</body>
+</html>

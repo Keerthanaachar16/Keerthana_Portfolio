@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects-Keerthana</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:black;
+    color:white;
+}
+
+/* Navbar */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:rgba(0,0,0,0.9);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:bold;
+    color:#ff4081;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+    text-shadow:0 8px 20px rgba(255,25,178,0.89);
+}
+
+nav ul li a:hover{
+    color:#ff4081;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:1.8rem;
+    cursor:pointer;
+    color:white;
+}
+
+/* Projects */
+
+.projects{
+    padding:60px 10%;
+}
+
+.heading{
+    text-align:center;
+    color:#ff4081;
+    font-size:3rem;
+    margin-bottom:50px;
+    /* text-shadow:0 8px 20px rgba(255,25,178,0.89); */
+}
+
+.project-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(255,25,178,0.5);
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 8px 25px rgba(255,25,178,0.9);
+}
+
+.project-card h3{
+    color:#f8f8f8;
+    text-align: center;
+    margin-bottom:15px;
+    border-bottom:1px solid #ff4081;
+    padding-bottom:5px;
+    
+}
+
+.project-card p{
+    color:#ddd;
+    line-height:1.7;
+    margin-bottom:10px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+span{
+    color:#ddd;
+}
+
+.tech{
+    color:#f9f6f7;
+    font-weight:bold;
+}
+
+.role{
+    color:#edeceb;
+    font-weight:bold;
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+    border-top:1px solid #333;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:1.4rem;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:black;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        padding:20px 0;
+        display:none;
+        gap:20px;
+        box-shadow:0 8px 20px rgba(255,25,178,0.3);
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .projects{
+        padding:40px 5%;
+    }
+
+    .heading{
+        font-size:2rem;
+        margin-bottom:35px;
+    }
+
+    .project-container{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .project-card{
+        padding:20px;
+    }
+
+    .project-card h3{
+        font-size:1.1rem;
+    }
+
+    .project-card p{
+        font-size:0.95rem;
+        line-height:1.6;
+    }
+
+    .footer{
+        font-size:0.85rem;
+        padding:20px 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">Keerthana</div>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fas fa-bars"></i>
+</div>
+
+<ul id="nav-links">
+<li><a href="index.html">HOME</a></li>
+<li><a href="aboutme.html">ABOUT</a></li>
+<li><a href="education.html">EDUCATION</a></li>
+<li><a href="projects.html">PROJECTS</a></li>
+<li><a href="certifications.html">CERTIFICATIONS</a></li>
+</ul>
+
+</nav>
+
+<section class="projects">
+
+<h2 class="heading">My <span>Projects</span></h2>
+
+
+<div class="project-container">
+
+<div class="project-card">
+<h3>Blackspot Monitoring System</h3>
+<p>Developed a PWA for real-time reporting and management of urban garbage black spots.</p>
+<p><span class="tech">Technology:</span> PHP (Laravel), HTML, CSS, JavaScript, Bootstrap</p>
+<p><span class="role">Role:</span> Full Stack Development</p>
+</div>
+
+<div class="project-card">
+<h3>Resume Generator</h3>
+<p>Developed a Resume Generator application for creating professional resumes.</p>
+<p><span class="tech">Technology:</span> Python (Flask), HTML, CSS, JavaScript</p>
+<p><span class="role">Role:</span> Frontend and Backend Development</p>
+</div>
+
+<div class="project-card">
+<h3>Cafiya - Hotel Website</h3>
+<p>Beautifully crafted hotel website designed to provide a seamless and engaging user experience.</p>
+<p><span class="tech">Technology:</span> HTML, CSS, PHP, MySQL</p>
+<p><span class="role">Role:</span> Frontend and Backend Development</p>
+</div>
+
+<div class="project-card">
+<h3>Bus Pass Management System</h3>
+<p>Android application allowing users to apply for bus passes, make payments and access passes online.</p>
+<p><span class="tech">Technology:</span> Android,SQLite Database</p>
+<p><span class="role">Role:</span> Frontend Development</p>
+</div>
+
+<div class="project-card">
+<h3>Poornaprajna Consultancy Services</h3>
+<p>Website providing detailed information about colleges, services, objectives and consultancy fees.</p>
+<p><span class="tech">Technology:</span> HTML, CSS, JavaScript</p>
+<p><span class="role">Role:</span> Frontend Development</p>
+</div>
+
+<div class="project-card">
+<h3>Portfolio Website of Dr. P. S. Aithal</h3>
+<p>Professional portfolio website showcasing achievements and contributions.</p>
+<p><span class="tech">Technology:</span> HTML, CSS, JavaScript</p>
+<p><span class="role">Role:</span> Frontend Development</p>
+</div>
+
+<div class="project-card">
+<h3>College Management System</h3>
+<p>Web-based application with Student, Admin, Teacher and User modules.</p>
+<p><span class="tech">Technology:</span> HTML, CSS, PHP, MySQL</p>
+<p><span class="role">Role:</span> Frontend and Backend Development</p>
+</div>
+
+</div>
+
+</section>
+
+<div class="footer">
+</div>
+
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>

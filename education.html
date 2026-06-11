@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education-Keerthana</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:black;
+    color:white;
+    text-align:center;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:rgba(0,0,0,0.85);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:bold;
+    color:#ff4081;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+    margin:0;
+    padding:0;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+    text-shadow:0 8px 20px rgba(255,25,178,0.9);
+}
+
+nav ul li a:hover{
+    color:#ff4081;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+/* ================= EDUCATION ================= */
+.education{
+    padding:80px 20px;
+    background: linear-gradient(135deg,#0f0f0f,#000);
+}
+
+.education-title{
+    font-size:2.8rem;
+    margin-bottom:50px;
+}
+
+.education-title span{
+    color:#ff4081;
+    text-shadow:0 8px 20px rgba(255,25,178,0.8);
+}
+
+.education-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.edu-card{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 8px 30px rgba(255,25,178,0.3);
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    opacity:0;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+}
+
+.edu-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 40px rgba(255,25,178,0.6);
+}
+
+.edu-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.edu-card h3{
+    color:#ff4081;
+    margin-bottom:10px;
+}
+
+.edu-card p{
+    color:#ddd;
+    font-size:0.95rem;
+    margin:5px 0;
+}
+
+
+/* Animation */
+
+.edu-card:nth-child(1){
+    animation:slideTop 1s ease forwards;
+    animation-delay:0.3s;
+}
+
+.edu-card:nth-child(2){
+    animation:slideBottom 1s ease forwards;
+    animation-delay:0.8s;
+}
+
+.edu-card:nth-child(3){
+    animation:slideTop 1s ease forwards;
+    animation-delay:1.3s;
+}
+
+.edu-card:nth-child(4){
+    animation:slideBottom 1s ease forwards;
+    animation-delay:1.8s;
+}
+
+@keyframes slideTop{
+    from{
+        opacity:0;
+        transform:translateY(-100px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideBottom{
+    from{
+        opacity:0;
+        transform:translateY(100px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* Responsive */
+@media(max-width:768px){
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:rgba(0,0,0,0.95);
+        flex-direction:column;
+        display:none;
+        padding:20px 0;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .education-container{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <div class="logo">Keerthana</div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul id="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="aboutme.html">ABOUT</a></li>
+        <li><a href="education.html">EDUCATION</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="certifications.html">CERTIFICATIONS</a></li>
+    </ul>
+</nav>
+
+<!-- ================= EDUCATION ================= -->
+<section class="education" id="education">
+    <h2 class="education-title">Education <span>History</span></h2>
+
+    <div class="education-container">
+        <!-- MCA -->
+        <div class="edu-card">
+            <h3>MCA</h3>
+            <p>Master of Computer Applications</p>
+            <p>College: Poornaprajna Institute of Management, Udupi</p>
+            <p>CGPA: 9.00</p>
+            <p>Year: 2023-2025</p>
+        </div>
+
+         <!-- Degree / BCA -->
+        <div class="edu-card">
+            <h3>BCA</h3>
+            <p>Bachelor of Computer Applications</p>
+            <p>College: Bhandarkar’s Arts and Science College, Kundapura</p>
+            <p>CGPA: 9.16</p>
+            <p>Year: 2020-2023</p>
+        </div>
+
+         <!-- PUC -->
+        <div class="edu-card">
+            <h3>PUC</h3>
+            <p>Completed Pre-University Course</p>
+            <p>College: Govt.PU College Koteshwara</p>
+            <p>Percentage: 85.33%</p>
+            <p>Year: 2018-2020</p>
+        </div>
+
+        <!-- SSLC -->
+        <div class="edu-card">
+            <h3>SSLC</h3>
+            <p>Completed SSLC with distinction</p>
+            <p>School: Govt.PU College Koteshwara</p>
+            <p>Percentage: 89.76%</p>
+            <p>Year: 2017-2018</p>
+        </div>
+        
+    </div>
+</section>
+
+<script>
+/* Navbar Toggle */
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.onclick = () => {
+    navLinks.classList.toggle("active");
+};
+
+document.querySelectorAll("#nav-links a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        navLinks.classList.remove("active");
+    });
+});
+</script>
+
+</body>
+</html>
